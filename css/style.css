@@ -5,4 +5,5 @@
 .box {
   border: 1px solid black;
   height: 150px;
+  margin: 5px;
 }
