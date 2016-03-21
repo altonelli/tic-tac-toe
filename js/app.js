@@ -54,15 +54,54 @@ $(document).ready(function() {
         boardReset(response,"win");
 
       } else if ($('.box').text().length === 9){
-        var response = prompt("Tie! Play again?");
-        boardReset(response,"tie");
+        var response2 = prompt("Tie! Play again?");
+        boardReset(response2,"tie");
       } else if (playerTwo === "computer" || playerTwo === "Arthur") {
         player = !player;
         var computerChoice = computerSelect(winCheck,forkTriCheck,forkArrowCheck,forkSplitCheck,"O","X");
         console.log(computerChoice);
         var boxNum = '[data-position="' + computerChoice +'"]';
         selectBox(boxNum,false);
+
+        var computerWinner= winner2(winCheck, isWinner, "O",playerOne,playerTwo);
+
+        if (computerWinner){
+          if(winner === "X"){
+            player = true;
+            player1Wins++;
+            $('.player1.val').text(player1Wins);
+          } else if (winner === "O") {
+            player = false;
+            player2Wins++;
+            $('.player2.val').text(player2Wins);
+          }
+
+        console.log("computer won");
+
+        var response3 = prompt("Would you like to play again? 'yes' or 'no'");
+        boardReset(response3,"win");
+
+        var computerChoice2 = computerSelect(winCheck,forkTriCheck,forkArrowCheck,forkSplitCheck,"O","X");
+        console.log(computerChoice2);
+        var boxNum2 = '[data-position="' + computerChoice2 +'"]';
+        selectBox(boxNum2,false);
         player = !player;
+
+
+        } else if ($('.box').text().length === 9){
+          var response4 = prompt("Tie! Play again?");
+          boardReset(response4,"tie");
+          if(playerTwo === "computer" || playerTwo === "Arthur"){
+            var computerChoice3 = computerSelect(winCheck,forkTriCheck,forkArrowCheck,forkSplitCheck,"O","X");
+            console.log(computerChoice3);
+            var boxNum3 = '[data-position="' + computerChoice3 +'"]';
+            selectBox(boxNum3,false);
+            player = !player;
+          }
+        } else {
+          player = !player;
+        }
+
 
 
       }
@@ -250,7 +289,7 @@ function forkCheck(hashCheck,letter){
       console.log(hashCheck[key],hashCheck[key][2][0]);
       var test = parseInt(hashCheck[key][2][0]);
       // $('[data-position="' + hashCheck[key][2][0] + '"]').toggleClass("answer");
-      return 2;
+      return hashCheck[key][2][0];
     }
   }
 }
