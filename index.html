@@ -31,36 +31,38 @@
         <!-- a column represents our game board -->
         <!-- the `offset` class helps us center the board -->
         <div class="col-xs-3">
-          <h1>Player 1</h1>
-          <p id="player1" value="0">0</p>
+          <h1 class="player1 name player">Player 1</h1>
+          <p class="player1 val" value="0">0</p>
         </div>
-        <div class="col-md-6 col-sm-8" id="board">
+
+        <div class="col-xs-6" id="board">
 
           <!-- you can put rows inside of columns! -->
           <!-- Bootstrap subdivides these 'nested' rows into 12 columns, too! -->
-          <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3 box col1 row1 downDiag" data-position="0"]></div>
-            <div class="col-md-3 col-sm-3 col-xs-3 box col2 row1" data-position="1"></div>
-            <div class="col-md-3 col-sm-3 col-xs-3 box col3 row1 upDiag" data-position="2"></div>
+          <div class="row text-center boardRow">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-3 box col1 row1 downDiag" data-position="0"]></div>
+            <div class="col-xs-3 box col2 row1" data-position="1"></div>
+            <div class="col-xs-3 box col3 row1 upDiag" data-position="2"></div>
           </div>
-          <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3 box col1 row2" data-position="3"></div>
-            <div class="col-md-3 col-sm-3 col-xs-3 box col2 row2 downDiag upDiag" data-position="4"></div>
-            <div class="col-md-3 col-sm-3 col-xs-3 box col3 row2" data-position="5"></div>
+          <div class="row text-center boardRow">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-3 box col1 row2" data-position="3"></div>
+            <div class="col-xs-3 box col2 row2 downDiag upDiag" data-position="4"></div>
+            <div class="col-xs-3 box col3 row2" data-position="5"></div>
           </div>
-          <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3 box col1 row3 upDiag" data-position="6"></div>
-            <div class="col-md-3 col-sm-3 col-xs-3 box col2 row3" data-position="7"></div>
-            <div class="col-md-3 col-sm-3 col-xs-3 box col3 row3 downDiag" data-position="8"></div>
+          <div class="row text-center boardRow">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-3 box col1 row3 upDiag" data-position="6"></div>
+            <div class="col-xs-3 box col2 row3" data-position="7"></div>
+            <div class="col-xs-3 box col3 row3 downDiag" data-position="8"></div>
           </div>
 
         </div>
 
-        <div class="row">
-          <div class="col-xs-3">
-            <h1>Player 2</h1>
-            <p id="player2" value="0">0</p>
-          </div>
+        <div class="col-xs-3">
+          <h1 class="player2 name">Player 2</h1>
+          <p class="player2 val" value="0">0</p>
         </div>
 
       </div>
